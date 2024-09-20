@@ -10,7 +10,7 @@ const swaggerDefinition = {
   },
   servers: [
     {
-      url: 'http://localhost:3000/api',
+      url: 'https://aseguradora-26wa.onrender.com/api',
     },
   ],
   components: {
