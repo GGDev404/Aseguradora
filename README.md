@@ -14,6 +14,7 @@ Puedes acceder a la documentación de la API en el siguiente enlace:
 
 ## Tabla de Contenidos
 
+- [Instalación Docker](#instalaciónDocker)
 - [Instalación](#instalación)
 - [Uso](#uso)
 - [Variables de Entorno](#variables-de-entorno)
@@ -21,6 +22,34 @@ Puedes acceder a la documentación de la API en el siguiente enlace:
 - [Documentación de la API](#documentación-de-la-api)
 - [Tareas Programadas](#tareas-programadas)
 - [Tecnologías Utilizadas](#tecnologías-utilizadas)
+
+
+## Instalación Docker
+
+Para ejecutar el proyecto usando Docker, sigue estos pasos:
+
+Asegúrate de tener Docker y Docker Compose instalados en tu máquina.
+
+Crea un archivo .env en el directorio raíz con las variables de entorno necesarias (ver sección Variables de Entorno). Asegúrate de que la variable DATABASE_URL apunte a la base de datos dentro de Docker. Por ejemplo:
+
+```bash
+DATABASE_URL=postgresql://postgres:password@db:5432/gestor_polizas
+```
+
+Construye y ejecuta los contenedores con Docker Compose:
+
+```bash
+docker-compose up --build
+```
+
+La API estará disponible en http://localhost:2077.
+
+Para ejecutar migraciones de Prisma dentro del contenedor, usa el siguiente comando:
+
+```bash
+docker-compose run web npx prisma migrate dev
+```
+
 
 
 ## Instalación
