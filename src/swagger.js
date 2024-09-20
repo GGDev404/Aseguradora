@@ -10,7 +10,7 @@ const swaggerDefinition = {
   },
   servers: [
     {
-      url: 'https://aseguradora-26wa.onrender.com/api',
+      url: 'https://aseguradora.geovanydev.tech/api',
     },
   ],
   components: {
