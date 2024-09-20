@@ -1,0 +1,61 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Agente {
+  id         Int      @id @default(autoincrement())
+  nombre     String
+  email      String   @unique
+  password   String
+  clientes   Cliente[]
+  polizas    Poliza[]
+}
+
+model Cliente {
+  id         Int      @id @default(autoincrement())
+  nombre     String
+  telefono   String
+  email      String
+  agenteId   Int
+  agente     Agente   @relation(fields: [agenteId], references: [id])
+  polizas    Poliza[]
+}
+
+model Asegurado {
+  id        Int     @id @default(autoincrement())
+  nombre    String
+  edad      Int
+  polizaId  Int
+  poliza    Poliza  @relation(fields: [polizaId], references: [numeroDePoliza])
+}
+
+model Poliza {
+  numeroDePoliza   Int        @id @default(autoincrement())
+  fechaInicio       DateTime
+  fechaVigencia     DateTime
+  clienteId        Int
+  cliente          Cliente     @relation(fields: [clienteId], references: [id])
+  asegurados       Asegurado[]
+  aseguradora      String
+  tipoPoliza       TipoPoliza      // GASTOS MÉDICOS, AUTO, SEGURO DE VIDA
+  precio           Float
+  estado           EstadoPoliza      // VIGENTE, VENCIDA
+  agenteId         Int
+  agente           Agente           @relation(fields: [agenteId], references: [id])
+}
+
+enum TipoPoliza {
+  GASTOS_MEDICOS
+  AUTO
+  SEGURO_DE_VIDA
+}
+
+enum EstadoPoliza {
+  VIGENTE
+  VENCIDA
+}
