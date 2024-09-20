@@ -3,6 +3,15 @@
 
 Este proyecto es una API RESTful desarrollada con Node.js que permite a los agentes de seguros gestionar clientes, pólizas y asegurados. La aplicación incluye autenticación con JWT, tareas automáticas con node-cron y está documentada con Swagger.
 
+## Despliegue en Render
+
+La API está desplegada en Render y funcionando. Ten en cuenta que la primera solicitud puede tardar un poco más de lo habitual debido a que se trata de una prueba gratuita.
+
+Puedes acceder a la documentación de la API en el siguiente enlace:
+
+[Documentación de la API](https://aseguradora.geovanydev.tech/api-docs/)
+
+
 ## Tabla de Contenidos
 
 - [Instalación](#instalación)
