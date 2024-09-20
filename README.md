@@ -59,13 +59,13 @@ Para instalar el proyecto en tu máquina local, sigue estos pasos:
 1. Clona el repositorio:
 
    ```bash
-   git clone https://github.com/tu-usuario/gestor-polizas.git
+   git clone https://github.com/GGDev404/Aseguradora.git
    ```
 
 2. Navega a la carpeta del proyecto:
 
    ```bash
-   cd gestor-polizas
+   cd Aseguradora
    ```
 
 3. Instala las dependencias:
